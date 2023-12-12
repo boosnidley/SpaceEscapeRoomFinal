@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<!-- Layout created by Brady, HTML/CSS edited by David and CSS Edited by Karis -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="SpaceEscapeRoom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Escape Room Game - Index</title>
+</head>
+<body>
+    <video autoplay muted loop id="starBackground">
+      <source src="Images/Stars.mp4" type="video/mp4">
+    </video>
+    <div id="game-container">
+        <div id="progress-bar"></div>
+        <div id="timer">Timer: <span id="timer-value">0:00</span></div>
+        <div id="score">Score: <span id="score-value">0</span></div>
+        <div id="scene-container">
+
+
+<!-- SCENE 1 / First Page - Created by Madeline, Edited For Functionality By David-->
+            <div class="scene" id="scene1">
+                <div class="body1">
+                    <div id="titleText">
+                        <h1>Space Virtual Escape Room</h1>
+                    </div>
+                    <button class="nextButtons" id="startButton" onclick="completeScene(), startTimer();">START</button>
+                </div>
+            </div>
+
+
+<!-- SCENE 2 / Crashing - Created by Madeline, Edited For Functionality By David-->
+            <div class="scene" id="scene2"> 
+                <div class="text-box">
+                    <h1>UH OH! The power supply for the ship is failing!</h1>
+                </div>
+                <button class="nextButtons2" id="crashingButton2" onclick="completeScene()">CONTINUE</button>
+            </div>
+
+
+<!-- SCENE 3 / Crashed - Created by Madeline, Edited For Functionality By David -->
+            <div class="scene" id="scene3"> 
+                <div class="text-box">
+                    <h1>You are now stranded on an alien planet. The power source failed and oxygen from the ship is running low. Complete the needed tasks, find a new power source, and escape the planet.</h1>
+                </div>
+                <button class="nextButtons2" id="crashingButton2" onclick="completeScene()">CONTINUE</button>
+            </div>
+
+
+<!-- SCENE 4 / Oxygen Mask - (Task-Just needs CSS work by Karis) - Created by Madeline, Edited For Functionality By David-->
+            <div class="scene" id="scene4"> 
+                <div class="text-box">
+                    <h1>Find the oxygen mask before the time runs out and you run out of oxygen</h1>
+                </div>
+                <div id="flashlight">
+                    <img class="flash" src="Images/flashlight.png" onclick="fadeOutAndRemove(this)">  
+                </div>
+                <div id="oxygenMask">
+                    <img class="mask" src="Images/oxygenmask.png" onclick="completeScene()"> 
+                </div>
+                <div id="walkie">
+                    <img class="walkieTalkie" src="Images/walkieTalkie.png" onclick="fadeOutAndRemove(this)"> 
+                </div>
+            </div>
+
+<!-- SCENE 5 (changed from scene 12 originally) / Decode = (Task-Just Needs CSS Work by Karis) - - Created by Karis, Edited For Functionality By David-->
+        <div class="scene" id="scene5"> 
+        <div class="text-box">
+            <h1>Decode the tiles for a clue</h1>
+        </div>
+        <div id="tileContainer">
+        <table>
+            <tr>
+                <td>
+                    <div class="tiles">ᛞ</div>
+                </td>
+                <td>
+                    <div class="tiles">ᛟ</div>
+                </td>
+                <td>
+                    <div class="tiles">ᚾ</div>
+                </td>
+                <td>
+                    <div class="tiles">ᛏ</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="tiles">ᚷ</div>
+                </td>
+                <td>
+                    <div class="tiles">ᛟ</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="tiles">ᛚ</div>
+                </td>
+                <td>
+                    <div class="tiles">ᛖ</div>
+                </td>
+                <td>
+                    <div class="tiles">ᚠ</div>
+                </td>
+                <td>
+                    <div class="tiles">ᛏ</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="runesContainer">
+        <img src="Images/Runes.png" alt="Key" id="runesKey">
+    </div>
+
+    <div id="result"></div>
+    <textarea placeholder="Decode the message here"></textarea>
+    <button id="EnterButton" onclick="checkString()">Enter</button>
+    <button class="nextButtons2" id="crashingButton2" style="display : none;" onclick="completeScene()">CONTINUE</button>
+    </div>
+
+
+
+<!-- SCENE 6 / Hallway (Pick left or right) - Created by Madeline, Edited For Functionality By David (CSS Work done by Karis)-->
+            <div class="scene" id="scene6"> 
+                <div class="text-box" style="bottom: 0px;">
+                  <h1>You come to a fork in the hallway. Which way will you go?</h1>
+            </div>
+            <button class="direction" id="left" onclick="showOtherDeathScreen()">LEFT</button>
+            <button class="direction" id="right" onclick="completeScene()">RIGHT</button>
+            </div>
+
+
+<!-- SCENE 7 / Airlockdoor 1 - Created by Madeline, Edited For Functionality By David (Done)-->
+            <div class="scene" id="scene7"> 
+                <div class="text-box">
+                    <h1>Going down the right hallway you notice the door is locked. You must figure out the password to open the door.</h1>
+                </div>
+                <button class="nextButtons2" id="crashingButton2" onclick="completeScene()">CONTINUE</button>
+            </div>
+
+
+<!-- SCENE 8 / Input the Password - Created by Madeline, Edited For Functionality By David (Done)-->
+            <div class="scene" id="scene8"> 
+                <div class="text-box">
+                  <h1>Input the password to unlock the door. </h1>
+                  <h2>HINT: The third planet in our solar system plus the number of planets in our solar system.</h2>
+                </div>
+
+                <div class="keypadDoor1">
+                    <div id="keypadQuestion1">
+                        <button class="planetButton" onclick="fadeOutAndRemove(this)">Mars8</button>
+                    </div>
+                    <div id="keypadQuestion2">
+                        <button class="planetButton" onclick="fadeOutAndRemove(this)">Earth7</button>
+                    </div>
+                    <!--Question 3 is the correct answer-->
+                    <div id="keypadQuestion3">
+                        <button class="planetButton" onclick="completeScene()">Earth8</button>
+                    </div>
+                    <div id="keypadQuestion4">
+                        <button class="planetButton" onclick="fadeOutAndRemove(this)">Venus12</button>
+                    </div>
+                </div>
+            </div>
+
+
+<!-- SCENE 9 / Righthallway Prompt - Created by Madeline, Edited For Functionality By David (Done)-->
+            <div class="scene" id="scene9"> 
+                <div class="text-box">
+                    <h1>Going down the right hallway, you come to an unlocked door that leads to the outside.</h1>
+                </div>
+                <button class="nextButtons2" id="crashingButton2" onclick="completeScene()">CONTINUE</button>
+            </div>
+
+
+<!-- SCENE 10 / Outside Prompt - - Created by Madeline, Edited For Functionality By David (Done)-->
+            <div class="scene" id="scene10"> 
+                <div class="text-box">
+                    <h1>You have made it outside the ship. You must traverse the alien planet land and locate the old station where a new power source for the ship can be found.</h1>
+                </div>
+                <button class="nextButtons2" id="crashingButton2" onclick="completeScene()">CONTINUE</button>
+            </div>
+
+
+
+<!-- SCENE 11 / Power Source Building Prompt - Created by Madeline, Edited For Functionality By David (Done)-->
+            <div class="scene" id="scene11"> 
+                <div class="text-box">
+                    <h1>You have made it to the old station. Complete the task to retrieve the new power source for your ship.
+                    </h1>
+                </div>
+                <button class="nextButtons2" id="crashingButton2" onclick="completeScene()">CONTINUE</button>
+            </div>
+<!-- Scene 12 / question coded by Karis -->
+            <div class="scene" id="scene12"> 
+                <div class="text-box">
+                  <h1>What is the phenomenon where a massive star collapses under its own gravity, leading to a violent explosion?</h1>
+                </div>
+
+                <div class="keypadDoor1">
+                    <div id="keypadQuestion1">
+                        <button id="nebula" class="planetButton" onclick="fadeOutAndRemove(this)">Nebula Formation</button>
+                    </div>
+                    <div id="keypadQuestion2">
+                        <button class="planetButton" onclick="fadeOutAndRemove(this)">Solar Flares</button>
+                    </div>
+                    <!--Question 3 is the correct answer-->
+                    <div id="keypadQuestion3">
+                        <button class="planetButton" onclick="completeScene()">Supernova</button>
+                    </div>
+                    <div id="keypadQuestion4">
+                        <button class="planetButton" id="blackHole" onclick="fadeOutAndRemove(this)">Black Hole Formation</button>
+                    </div>
+                </div>
+            </div>
+
+<!-- SCENE 13 / Way Back Prompt - Created by Madeline, Edited For Functionality By David (Done)-->
+            <div class="scene" id="scene13"> 
+                <div class="text-box">
+                    <h1>You now have the new power source! Make your way back to the ship.</h1>
+                </div>
+                <button class="nextButtons2" id="crashingButton2" onclick="completeScene()">CONTINUE</button>
+            </div>
+
+<!-- SCENE 14 / Back at Ship Prompt - Created by Madeline, Edited For Functionality By David and Karis-->
+            <div class="scene" id="scene14"> 
+                <div class="text-box">
+                  <h1>You have made it back to your ship with the new power source. Complete the needed tasks to start up the ship and escape.</h1>
+                </div>
+                <button class="nextButtons2" id="crashingButton2" onclick="completeScene()">CONTINUE</button>
+            </div>
+
+
+<!-- SCENE 15 / Key Task - Created by David -->
+            <div class="scene" id="scene15"> 
+                 <div class="text-box">
+                      <h1>Find the key to start the spaceship. </h1>
+                      <h2>HINT: The color of the key is the combination of two other colors of keys.</h2>
+                    </div>
+
+                <div class="keyRack1">
+                     <div id="key1">
+                    <img src="Images/key1.png" alt="key1" onclick="fadeOutAndRemove(this)">
+                    </div>
+                    
+                    <div id="key2">
+                    <img src="Images/key2.png" alt="key2" onclick="fadeOutAndRemove(this)">
+                    </div>
+                    
+                    <!--Green Key is the correct answer-->
+                    <div id="key3">
+                    <img src="Images/key3.png" alt="key3" onclick="completeScene()">
+                    </div>
+
+                    <div id="key4">
+                    <img src="Images/key4.png" alt="key4" onclick="fadeOutAndRemove(this)">
+                    </div>
+                </div>
+            </div>
+            
+
+<!-- SCENE 16 / Ship Sailing Away Prompt - Created by David -->
+            <div class="scene" id="scene16"> 
+                <div class="text-box">
+                  <h1>The key worked! The spaceship can now escape in time!</h1>
+                </div>
+                <button class="nextButtons2" id="crashingButton2" onclick="completeScene(); scoringSystem()">CONTINUE</button>
+            </div>
+
+
+<!-- SCENE 17 / Ranking Screen - Created by David, edited by Karis-->
+            <div class="scene" id="scene17">
+                <div class="text-box">
+                    <h1>Your final score is: <span id="finalScore"></span></h1>
+                    <h2><span id="rankValue"></span></h2>
+                </div>
+            </div>
+
+
+<!-- SCENE 18 / Death Screen Time Runs Out - Created by Karis-->
+            <div class="scene" id="scene18">
+                <div class="text-box">
+                  <h1>You ran out of time. Your lifeless body will float in space forever.</h1>
+                </div>
+                <button id="restartButton" onclick="restartGame()">RESTART</button>
+            </div>
+            <script>
+                function hideButton() {
+                   $('#EnterButton').hide(); 
+                }
+                 function showButton() {
+                   $('.nextButtons2').show(); 
+                }
+            </script>
+
+<!-- SCENE 19 / Death Screen Wrong Door- Created by Karis-->
+            <div class="scene" id="scene19">
+                <div class="text-box">
+                  <h1>You chose the wrong path. You die.</h1>
+                </div>
+                <button id="restartButton" onclick="restartGame()">RESTART</button>
+            </div>
+
+<!-- Created by Brady, Edited by David For Functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+            // Function checkString created by Karis
+         function checkString() {
+            var inputText = $('textarea').val();
+            var specificString = 'dont go left'; 
+
+            if (inputText.includes(specificString)) {
+              $('#result').text('Good job you decoded the clue.').css('text-shadow', '2px 0 20px green');
+              showButton();
+              hideButton();
+            } else {
+                timerValue -= 5
+              $('#result').text('Incorrect.').css('text-shadow', '2px 0 20px red');
+            }
+          }
+
+       // Created by Brady
+        let timerValue = 110;
+        let scoreValue = 0;
+        let currentScene = 1;
+
+        function startTimer() {
+            const timerInterval = setInterval(() => {
+                timerValue--;
+                updateTimerDisplay();
+                updateProgressBar();
+
+                if (timerValue === 0) {
+                    clearInterval(timerInterval);
+                    showDeathScreen();
+                }
+            }, 1000);
+        }
+        // add so when time runs out, get death screen. Coded by Karis
+        function showDeathScreen() {
+            $('#scene' + currentScene).hide();
+            $('#scene17').fadeIn();
+        }
+        function showOtherDeathScreen() {
+            $('#scene' + currentScene).hide();
+            $('#scene18').fadeIn();
+        }
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timerValue / 60);
+            const seconds = timerValue % 60;
+            $('#timer-value').text(`${minutes}:${seconds < 10 ? '0' : ''}${seconds}`);
+        }
+
+        function updateScoreDisplay() {
+            $('#score-value').text(scoreValue);
+        }
+
+        function updateProgressBar() {
+            const progress = (timerValue / 110) * 100;
+            $('#progress-bar').css('width', `${progress}%`);
+        }
+
+        function completeScene() {
+            // David added logic for scoring
+            if (currentScene != 1){
+            scoreValue += 100 - (60-timerValue); // Example: Score based on time remaining
+            updateScoreDisplay();
+        }
+
+            // Hide current scene
+            $(`#scene${currentScene}`).hide();
+
+            // Move to the next scene
+            currentScene++;    
+            // Show the next scene
+                $(`#scene${currentScene}`).fadeIn();
+            }
+
+
+        function fadeOutAndRemove(object) {
+            timerValue -= 10;
+            $(object).fadeOut(1000, function () {
+                $(this).remove();
+            });
+        }
+
+            // scoreRank Created by David, edited by Karis
+
+let scoreRank = "default";
+
+         function scoringSystem() {
+            
+
+            if(scoreValue < 800){
+                scoreRank = "Your rank is Novice";
+            } else if(scoreValue < 900){
+                scoreRank = 'Your rank is Intern';
+            } else if(scoreValue < 1100){
+                scoreRank = 'Your rank is Crewmate';
+            } else{
+                scoreRank = 'Your rank is Captain';
+            }
+            $('#rankValue').text(scoreRank);
+
+                // Display the final score
+                $('#finalScore').text(scoreValue);
+
+                // Show the ranking screen
+            }
+
+            // Add this function to show the ranking screen
+            function showRankingScreen() {
+                $('#scene16').fadeIn();
+
+        }      
+
+
+        // Created by Brady
+        $(document).ready(function () {
+            $('#scene1').show(); // Show the first scene
+        });
+        function restartGame() {
+                location.reload();
+            }
+
+    </script>
+</body>
+</html>

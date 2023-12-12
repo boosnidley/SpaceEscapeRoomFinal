@@ -1,0 +1,1200 @@
+@charset "utf-8";
+
+body {
+	font-family: Roboto;
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	color: #fff;
+}
+
+#starBackground {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#game-container {
+	padding: 20px;
+	position: relative;
+	height: 80vh;
+	width: auto;
+}
+
+#progress-bar {
+	width: 100%;
+	height: 20px;
+	background-color: #375786;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+#timer {
+	z-index: 1;
+	position: relative;
+}
+
+#timer, #score {
+	margin-bottom: 10px;
+	font-family: Big Shoulders Text;
+	font-size: 25px;
+	margin-top: 10px;
+
+}
+
+#score {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.scene {
+	display: none;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	/* padding-top: 50px; */
+}
+
+#scene-container {
+	background-color: black;
+	height: 80vh;
+	width: 85%;
+	margin: 0 auto;
+	margin-top: 1%;
+	color: white;
+	position: relative;
+}
+
+.body1 {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	/* width: 1200px;
+	height: 750px; */
+	margin: auto;
+	background-repeat: no-repeat;
+	/* background-size: 1500px;
+	        max-height: 750px;*/
+}
+
+#titleText {
+	font-size: 35px;
+	justify-content: center;
+	align-content: center;
+	top: 20%;
+	position: absolute;
+	color: #172b52;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+
+.nextButtons {
+
+	justify-content: center;
+	align-content: center;
+	position: absolute;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	height: 100px;
+	width: 300px;
+	font-size: 40px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+
+}
+#restartButton {
+	font-family: big shoulders Text;
+	justify-content: center;
+	align-content: center;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	height: 100px;
+	width: 300px;
+	font-size: 40px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+#restartButton:hover{
+	background-color: #375786 !important;
+}
+
+.nextButtons:hover {
+	background-color: #375786;
+}
+
+.nextButtons2 {
+
+	justify-content: center;
+	align-content: center;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	height: 100px;
+	width: 300px;
+	font-size: 40px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+
+}
+
+.nextButtons2:hover {
+	background-color: #375786;
+}
+
+.body3 {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 0;
+	background-image: url("Images/starryBackground1.jpg");
+	background-repeat: no-repeat;
+	background-size: 1500px;
+	max-height: 750px;
+}
+
+#meteorText {
+	margin-top: 0;
+	z-index: 15;
+	position: absolute;
+}
+
+#meteorText h1 {
+	font-size: 45px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	color: #cef4f3;
+}
+
+#meteorTextbackground {
+	border-radius: 25px;
+	background-color: #313743;
+	margin-top: 1.5%;
+	opacity: 0.65;
+	width: 600px;
+	height: 70px;
+	position: absolute;
+	z-index: 10;
+}
+
+#shipHealthbar {
+	border-radius: 25px;
+	background-color: #cef4f3;
+	height: 20px;
+	width: 400px;
+	box-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	margin-top: 8%;
+}
+
+#spaceship {
+	justify-content: center;
+	align-content: center;
+	margin-top: 40%;
+	margin-left: 5%;
+	position: absolute;
+}
+
+.meteor1 {
+	position: absolute;
+	margin-right: 10px;
+}
+
+
+/* CSS Slide 3 - Crashing */
+
+.crashingBody {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* Updated to align-items for vertical centering */
+	margin: 0;
+	background-image: url("Images/crashing1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* Updated to cover for better responsiveness */
+	height: 750px;
+	position: relative;
+	/* Added position relative to allow absolute positioning within */
+}
+
+#crashingTextbackground {
+	border-radius: 25px;
+	background-color: #313743;
+	opacity: 0.65;
+	width: 70%;
+	/* Updated width for responsiveness max-width: 1300px; */
+	height: 100px;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 50;
+}
+
+#crashingText {
+	z-index: 100;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#crashingText h1 {
+	font-size: 60px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	color: #cef4f3;
+	margin: 0;
+}
+
+#crashingButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+
+#crashingButton button {
+	height: 100px;
+	width: 250px;
+	font-size: 40px;
+	color: #cef4f3;
+	background-color: #313743;
+	border-radius: 25px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 18px #ccc;
+	border: none;
+}
+
+#crashingButton2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+	float: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0px 25px 25px 0px;
+}
+
+#crashingButton2 button {
+	height: 100px;
+	width: 250px;
+	font-size: 40px;
+	color: #cef4f3;
+	background-color: #313743;
+	border-radius: 25px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 18px #ccc;
+	border: none;
+}
+
+/*CSS Slide 4-Crashed*/
+.crashedBody {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 0;
+	background-image: url("Images/crashed.jpg");
+	background-repeat: no-repeat;
+	/* background-size: 1600px;*/
+	height: 750px;
+}
+
+#crashedTextbackground {
+	border-radius: 25px;
+	background-color: #313743;
+	margin-top: 10%;
+	opacity: 0.85;
+	width: 1300px;
+	height: 300px;
+	position: absolute;
+}
+
+#crashedText {
+	margin-top: 10%;
+	z-index: 100;
+	width: 1250px;
+}
+
+#crashedText h1 {
+	font-size: 50px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 18px #ccc;
+	color: #cef4f3;
+}
+
+#crashedButton {
+	justify-content: center;
+	align-content: center;
+	position: absolute;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	margin-top: 15%;
+	/* margin-left: 70%;*/
+}
+
+#crashedButton button {
+	height: 100px;
+	width: 250px;
+	font-size: 40px;
+	color: #cef4f3;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 18px #ccc;
+}
+
+
+/*CSS Slide 6-Hallway Choice*/
+.hallway1 {
+	display: flex;
+	content: "";
+	background-repeat: no-repeat;
+	background-size: 1500px;
+	max-height: 750px;
+	bottom: 0px;
+	background-color: #141a2a;
+	justify-content: center;
+	position: absolute;
+
+}
+
+#leftHallway button {
+	height: 160px;
+	width: 220px;
+	font-size: 60px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	margin-top: 40%;
+}
+
+#rightHallway button {
+	height: 160px;
+	width: 220px;
+	font-size: 60px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	margin-top: 40%;
+}
+
+#hallwayText {
+	background-color: #313743;
+	font-size: 40px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	width: 1100px;
+	height: 100px;
+	border-radius: 25px;
+}
+
+#hallwayText h1 {
+	justify-content: center;
+	align-content: center;
+	margin-top: 0;
+}
+
+
+/*CSS Slide 5-Find Oxygen Mask*/
+.closetBody {
+	display: flex;
+	background-image: url("Images/closet1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-height: 750px;
+	position: absolute;
+}
+
+#oxygenTimer {
+	background-color: #313743;
+	width: 200px;
+	height: 100px;
+	font-size: 40px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	border-radius: 25px;
+	z-index: 200;
+	justify-content: center;
+	align-content: center;
+	position: absolute;
+	text-align: center;
+	margin-left: 580px;
+}
+
+#oxygenTimer h1 {
+	justify-content: center;
+	align-content: center;
+	z-index: 201;
+	position: absolute;
+	margin-top: 0;
+	text-align: center;
+	margin-left: 25px;
+	color: #cef4f3;
+}
+
+#oxygenExplanation {
+	font-size: 18px;
+	justify-content: center;
+	align-content: center;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	border-radius: 25px;
+	background-color: #313743;
+	margin-left: 50px;
+	margin-top: 625px;
+	position: absolute;
+	width: 1250px;
+}
+
+#oxygenExplanation h1 {
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	color: #cef4f3;
+}
+
+#flashlight {
+	position: absolute;
+	width: 80px;
+	height: 70px;
+}
+.direction {
+	background-color: white;
+	float: left;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px black;
+	margin-top: 15%;
+}
+#left {
+	margin-right: 5%;
+	margin-left: 40%;
+}
+
+#right {
+	margin-right: 30%;
+}
+
+.flash:hover {
+	transform: scale(1.7);
+	cursor: pointer;
+}
+
+.flash {
+	margin-left: 1080%;
+	margin-top: 250%;
+	transform: rotate(35deg);
+	transition: transform .2s: 70px;
+	height: 50px;
+	width: auto;
+}
+
+#oxygenMask {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
+
+.mask:hover {
+	transform: scale(1.7);
+	cursor: pointer;
+}
+
+.mask {
+	margin-left: 870%;
+	margin-top: -5%;
+	width: auto;
+	height: 90px;
+}
+
+#walkie {
+	position: absolute;
+	width: 50px;
+	height: 70px;
+}
+
+.walkieTalkie:hover {
+	transform: scale(1.7);
+	cursor: pointer;
+}
+
+.walkieTalkie {
+	margin-left: 1800%;
+	margin-top: 760%;
+	cursor: pointer;
+	width: 50px;
+	height: auto;
+}
+
+
+
+/*Closed door with keypad*/
+
+.airlockDoor1 {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 0;
+	background-image: url("Images/airlockDoor1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-height: 1000px;
+	position: absolute;
+}
+
+#airlockText {
+	position: absolute;
+	margin-left: 1375px;
+	width: 1300px;
+	z-index: 60;
+	height: 80px;
+}
+
+#airlockText h1 {
+	position: absolute;
+	font-size: 40px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 18px #ccc;
+	color: #cef4f3;
+	text-align: center;
+}
+
+#airlockTextbackground {
+	justify-content: center;
+	align-content: center;
+	border-radius: 25px;
+	background-color: #313743;
+	margin-top: 25px;
+	margin-left: 1380px;
+	opacity: 0.65;
+	width: 1300px;
+	height: 100px;
+	position: absolute;
+	z-index: 50;
+}
+
+#airlockButton {
+	justify-content: center;
+	align-content: center;
+	position: absolute;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	position: absolute;
+	margin-left: 2400px;
+	margin-top: 600px;
+}
+
+#airlockButton button {
+	height: 100px;
+	width: 200px;
+	font-size: 50px;
+	color: #cef4f3;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 18px #ccc;
+}
+
+
+/*Keypad password*/
+.keypadDoor1 {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-height: 1000px;
+}
+
+#keypadText {
+	position: absolute;
+	margin-left: 1400px;
+	width: 1300px;
+	z-index: 60;
+	height: 80px;
+}
+
+#keypadText h1 {
+	position: absolute;
+	font-size: 45px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 18px #ccc;
+	color: #cef4f3;
+}
+
+#keypadTextbackground {
+	justify-content: center;
+	align-content: center;
+	border-radius: 25px;
+	background-color: #313743;
+	margin-top: 25px;
+	margin-left: 1380px;
+	opacity: 0.65;
+	width: 1300px;
+	height: 60px;
+	position: absolute;
+	z-index: 50;
+}
+
+#keypadHint {
+	position: absolute;
+	margin-left: 1000px;
+	width: 1300px;
+	z-index: 80;
+	height: 80px;
+	margin-top: 85px;
+}
+
+#keypadHint h1 {
+	position: absolute;
+	font-size: 25px;
+	text-shadow: 1px 1px 2px #d8f7f7, 1px 1px 18px #ccc;
+	color: #cef4f3;
+	margin-left: 355px;
+	width: 1000px;
+}
+
+#keypadHintbackground {
+	justify-content: center;
+	align-content: center;
+	border-radius: 25px;
+	background-color: #313743;
+	margin-top: 90px;
+	margin-left: 1380px;
+	opacity: 0.65;
+	width: 1000px;
+	height: 50px;
+	position: absolute;
+	z-index: 70;
+}
+
+#keypadQuestion1 {
+	justify-content: center;
+	align-content: center;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+.planetButton {
+	margin-right: 10px;
+	margin-top: 110%;
+}
+.planetButton:hover {
+	background-color: #375786 !important;
+}
+#nebula {
+	font-size: 30px !important;
+}
+#blackHole {
+	font-size: 30px !important;
+}
+#keypadQuestion1 button {
+	height: 100px;
+	width: 230px;
+	font-size: 50px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+
+#keypadQuestion2 {
+	justify-content: center;
+	align-content: center;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+
+#keypadQuestion2 button {
+	height: 100px;
+	width: 230px;
+	font-size: 50px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+
+#keypadQuestion3 {
+	justify-content: center;
+	align-content: center;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	;
+}
+
+#keypadQuestion3 button {
+	height: 100px;
+	width: 230px;
+	font-size: 50px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+
+#keypadQuestion4 {
+	justify-content: center;
+	align-content: center;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	;
+}
+
+#keypadQuestion4 button {
+	height: 100px;
+	width: 230px;
+	font-size: 50px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+
+/*tasks to get to the outside(left hallway)*/
+
+/*Right hallway choice story prompt*/
+
+
+/*Right hallway choice task*/
+/*tasks to get to the outside(right hallway)*/
+
+
+/*OUTSIDE*/
+
+/*Outside prompt*/
+.outsidePrompt {
+	display: flex;
+	background-image: url("Images/outsidebackground.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-height: 750px;
+	position: absolute;
+	align-content: center;
+	align-items: center;
+}
+
+#outsidePrompttext {
+	margin-top: 10%;
+	z-index: 100;
+	width: 1350px;
+	margin-left: 3%;
+}
+
+#outsidePrompttext h1 {
+	font-size: 50px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 18px #ccc;
+	color: #cef4f3;
+}
+
+#outsidePrompttextBackground {
+	border-radius: 25px;
+	background-color: #313743;
+	margin-top: 10%;
+	opacity: 0.85;
+	width: 1300px;
+	height: 200px;
+	position: absolute;
+	z-index: 50;
+	margin-left: 2%;
+}
+
+#outsidePromptbutton {
+	justify-content: center;
+	align-content: center;
+	position: absolute;
+	top: 160%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	margin-left: 80%;
+}
+
+#outsidePromptbutton button {
+	height: 100px;
+	width: 200px;
+	font-size: 50px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+
+/*powersource building prompt*/
+.powerSourcebuilding {
+	display: flex;
+	background-image: url("Images/powersourcebuilding.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-height: 750px;
+	position: absolute;
+	align-content: center;
+	align-items: center;
+}
+
+#powersourceText {
+	margin-top: 10%;
+	z-index: 100;
+	width: 1350px;
+	margin-left: 3%;
+
+}
+
+#powersourceText h1 {
+	font-size: 50px;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 18px #ccc;
+	color: #cef4f3;
+}
+
+#powersourceTextbackground {
+	border-radius: 25px;
+	background-color: #313743;
+	margin-top: 10%;
+	opacity: 0.85;
+	width: 1300px;
+	height: 150px;
+	position: absolute;
+	z-index: 50;
+	margin-left: 2%;
+}
+
+#powersourcebuildingButton {
+	justify-content: center;
+	align-content: center;
+	position: absolute;
+	top: 185%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	margin-left: 80%;
+}
+
+#powersourcebuildingButton button {
+	height: 100px;
+	width: 200px;
+	font-size: 50px;
+	color: #071021;
+	background-color: #313743;
+	border-radius: 25px;
+	color: #cef4f3;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+}
+
+.text-box {
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+	background-color: rgba(64, 68, 81, 0.6);
+	width: 100%;
+	padding: 20px;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+#rank {
+	display: flex;
+	justify-content: center;
+}
+
+/* Created and Edited by David */
+#scene1 {
+	background-image: url(Images/titleslidebackground.jpg);
+	background-size: 100% 100%;
+}
+
+#scene2 {
+	background-image: url(Images/crashing2.png);
+	background-size: 100% 100%;
+}
+
+#scene3 {
+	background-image: url(Images/crashedspaceship.jpg);
+	background-size: 100% 100%;
+}
+
+#scene4 {
+	background-image: url(Images/closetnew.jpg);
+	background-size: 100% 100%;
+}
+
+#scene5 {
+	background-image: url(Images/moonTexture.avif);
+	background-size: 100% 100%;
+}
+
+#scene6 {
+	background-image: url(Images/hallway.jpg);
+	background-size: 100% 100%;
+}
+
+#scene7 {
+	background-image: url(Images/controlpanel.jpeg);
+	background-size: 100% 100%;
+}
+
+#scene8 {
+	background-image: url(Images/airlockdoor1.jpg);
+	background-size: 100% 100%;
+}
+
+#scene9 {
+	background-image: url(Images/outsidebackground.jpg);
+	background-size: 100% 100%;
+}
+
+#scene10 {
+	background-image: url(Images/threepathways1.jpg);
+	background-size: 100% 100%;
+}
+
+#scene11 {
+	background-image: url(Images/powersourcebuilding.jpg);
+	background-size: 100% 100%;
+}
+
+#scene12 {
+	background-image: url(Images/powersourcebuilding.jpg);
+	background-size: 100% 100%;
+}
+
+#scene13 {
+	background-image: url(Images/outsidebackground.jpg);
+	background-size: 100% 100%;
+}
+
+#scene14 {
+	background-image: url(Images/interior.jpeg);
+	background-size: 100% 100%;
+}
+
+#scene15 {
+	background-image: url(Images/keys.jpeg);
+	background-size: 100% 100%;
+}
+
+#scene16 {
+	background-image: url(Images/SpaceBack2.jpg);
+	background-size: 100% 100%;
+}
+
+#scene17 {
+	background-image: url(Images/TakeOff.png);
+	background-size: 100% 100%;
+}
+#scene18 {
+	background-image: url(Images/noTime.png);
+	background-size: 100% 100%;
+}
+
+#scene19 {
+	background-image: url(Images/wrongPath.jpeg);
+	background-size: 100% 100%;
+}
+/*decode task css - edited by David*/
+
+#tileContainer {
+	height: fit-content;
+	width: fit-content;
+}
+table {
+	margin-left: 10px;
+}
+td {
+	height: 100px;
+	width: 100px;
+}
+
+.tiles {
+	background-color: #696f80;
+	height: 80px;
+	width: 80px;
+	border-radius: 10px;
+	font-size: 60px;
+	text-align: center;
+}
+
+textarea {
+	height: 40px;
+	width: 60%;
+	font-size: 20px;
+	border-radius: 10px;
+	border: 2px solid darkgrey;
+	padding: 10px;
+	resize: none;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+#result {
+	text-align: center;
+	margin-left: 50%;
+	transform: translateX(-30%);
+}
+
+button {
+	background-color: #696f80;
+	height: 60px;
+	width: auto;
+	font-size: 40px;
+	margin-top: 30px;
+	padding: 7px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	font-family: big shoulders text;
+	border-radius: 10px;
+
+}
+
+button:hover {
+	background-color: #375786;
+}
+#EnterButton {
+	float: right;
+	margin-right: 20px;
+	margin-bottom: 60px;
+}
+#runesKey {
+	height: 300px;
+	width: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+/* Created by Karis, fixed for functionality by David */
+#runesContainer {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	background-color: white;
+	position: absolute;
+	padding: 20px;
+	border-radius: 10px;
+	font-family: roboto;
+	width: 40%;
+}
+
+/* Created by Karis, fixed for functionality by David */
+#runesContainer img {
+	width: 100%;
+}
+
+#result {
+	font-size: 50px;
+	color: white;
+	font-weight: bold;
+	margin-top: 10px;
+	padding-right: 8%;
+	height: auto;
+	width: fit-content;
+	font-family: big shoulders text;
+
+}
+
+#frame {
+	height: 614px;
+	width: 1014px;
+	background-color: #696f80;
+}
+
+#message {
+	height: 150px;
+	width: 1000px;
+	background-color: white;
+	font-size: 20px;
+	padding: 7px;
+}
+
+/* Scene 14 Key Task CSS - Created and maintained by David */
+
+.keyRack1 {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-height: 1000px;
+}
+
+#key1 {
+	justify-content: center;
+	align-content: center;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	;
+}
+
+#key1 img {
+	height: 300px;
+	width: 150px;
+	border-radius: 25px;
+}
+#key1 img:hover {
+	cursor: pointer;
+}
+
+#key2 {
+	justify-content: center;
+	align-content: center;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	;
+}
+
+#key2 img {
+	height: 300px;
+	width: 150px;
+	border-radius: 25px;
+}
+#key2 img:hover {
+	cursor: pointer;
+}
+
+#key3 {
+	justify-content: center;
+	align-content: center;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	;
+}
+
+#key3 img {
+	height: 300px;
+	width: 150px;
+	border-radius: 25px;
+}
+#key3 img:hover {
+	cursor: pointer;
+}
+
+#key4 {
+	justify-content: center;
+	align-content: center;
+	top: 50%;
+	text-shadow: 1px 1px 0.4px #d8f7f7, 1px 1px 10px #ccc;
+	;
+}
+
+#key4 img {
+	height: 300px;
+	width: 150px;
+	border-radius: 25px;
+}
+#key4 img:hover {
+	cursor: pointer;
+}
+
+/* any other random CSS things - created by David */
+
+h2 {
+	font-size: 15px;
+}
